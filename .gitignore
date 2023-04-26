@@ -1,1 +1,24 @@
-.idea
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_vendor/
+bin/
+pkg/
+dist/
+tmp/
+.vscode/
+.idea/
+
+# OS-specific
+*.exe
+*.dll
+*.dylib
+
+# Go-specific
+*.test
+*.prof
+*.cover
+*.out

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "github.com/homaderaka/venvision/product/protofiles";
+
+message Product {
+  string uuid = 1;
+  string shopUUID = 2;
+  string name = 3;
+  string description = 4;
+  Price price = 5;
+  repeated string imagesURL = 6;
+  repeated string categories = 7;
+}
+
+message Price {
+  string Value = 1;
+  string CurrencyCode = 2;
+}
+
+service ProductService {
+  rpc GetAll (GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByUUID (GetByUUIDRequest) returns (Product) {}
+}
+
+message GetAllRequest {}
+
+message GetAllResponse {
+  repeated Product products = 1;
+}
+
+message GetByUUIDRequest {
+  string uuid = 1;
+}
